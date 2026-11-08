@@ -367,8 +367,8 @@ footer p+p{margin-top:10px}
     <div><div class="v">&gt;$1.1M</div><div class="l">ACV no longer exposed to a wrong-delivery incident</div></div>
   </div>
   <div class="chartlegend">
-    <span><i style="background:var(--muted)"></i>Before the Configurator</span>
-    <span><i style="background:var(--accent)"></i>After the Configurator</span>
+    <span><i style="background:var(--bad)"></i>Before the Configurator</span>
+    <span><i style="background:var(--good)"></i>After the Configurator</span>
     <span><b></b>Configurator launched</span>
   </div>
   <div class="charts">
@@ -891,7 +891,7 @@ render();
   if(typeof Chart==='undefined')return;
   var cs=getComputedStyle(document.documentElement);
   var tok=function(n){return cs.getPropertyValue(n).trim()};
-  var BEFORE=tok('--muted'),AFTER=tok('--accent'),TICK=tok('--muted'),GRID=tok('--line');
+  var BEFORE=tok('--bad'),AFTER=tok('--good'),TICK=tok('--muted'),GRID=tok('--line');
   Chart.defaults.font.family="'Schibsted Grotesk',system-ui,sans-serif";
   var labels=['-12','-11','-10','-9','-8','-7','-6','-5','-4','-3','-2','-1','+1','+2','+3','+4','+5','+6','+7','+8','+9','+10','+11','+12'];
   var launch={id:'launch',afterDatasetsDraw:function(ch){
