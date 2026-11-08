@@ -375,7 +375,6 @@ footer p+p{margin-top:10px}
     <div class="card">
       <h4>Redeliveries per month</h4>
       <div class="chartbox"><canvas id="chRedeliveries" role="img" aria-label="Bar chart of redeliveries per month: 9 in the 12 months before launch, 1 in the 12 months after.">Redeliveries: 9 in the 12 months before launch, 1 in the 12 months after.</canvas></div>
-      <p class="stepnote">An 89% reduction (8 of 9), calculated from the team's counts.</p>
     </div>
     <div class="card">
       <h4>On-time delivery rate (%)</h4>
@@ -914,7 +913,7 @@ render();
   function xtick(v){var r=Math.round(v);if(Math.abs(v-r)>1e-6||r===0)return '';return r>0?'+'+r:'\u2212'+Math.abs(r)}
   function linScales(yTitle,yopts){
     return {
-      x:{type:'linear',min:-12.5,max:12.5,grid:{display:false},ticks:{color:TICK,font:{size:11},stepSize:1,autoSkip:false,maxRotation:0,includeBounds:false,callback:xtick},title:{display:true,text:'Months before (\u2212) and after (+) the Configurator',color:TICK,font:{size:11}}},
+      x:{type:'linear',min:-12.5,max:12.5,grid:{display:false},afterBuildTicks:function(ax){var t=[];for(var i=-12;i<=12;i++){if(i!==0)t.push({value:i})}ax.ticks=t},ticks:{color:TICK,font:{size:11},autoSkip:false,maxRotation:0,callback:xtick},title:{display:true,text:'Months before (\u2212) and after (+) the Configurator',color:TICK,font:{size:11}}},
       y:Object.assign({grid:{color:GRID},border:{display:false},ticks:{color:TICK,font:{size:11}},title:{display:true,text:yTitle,color:TICK,font:{size:11}}},yopts)
     };
   }
