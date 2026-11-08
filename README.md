@@ -4,7 +4,7 @@ A working replica of an internal tool that lets Customer Success configure,
 review and release data extracts for enterprise clients, replacing hand-coded
 specs with a reviewed, versioned and auditable path.
 
-**Live demo:** <[link to GitHub Pages](https://anaamali.github.io/projects/)>
+**Live demo:** <(https://anaamali.github.io/projects/)>
 
 ## The problem
 Extract specs were typed by hand into code before each delivery. One typo
